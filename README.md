@@ -1,5 +1,7 @@
 # Route 53 Clone
 
+🚀 **Live Demo:** [https://route53-clone-lilac.vercel.app](https://route53-clone-lilac.vercel.app)
+
 A functional clone of the AWS Route 53 web console with mocked authentication and browser-persistent data storage.
 
 > **Stack note for the assignment reviewer:** the requested stack was
@@ -97,3 +99,4 @@ src/
 - Engineering: typed routes, local API abstraction, per-record-type validation, optimistic refresh after mutations.
 - DB model: normalized hosted zones, DNS records, health checks, user scoping, and denormalized record counts implemented in the store.
 - Docs: this README + inline route comments.
+
