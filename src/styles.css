@@ -1,0 +1,141 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AWS Cloudscape-inspired design system for the Route 53 clone.
+ * All colors are oklch tokens; never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* AWS console semantic tokens */
+  --color-aws-nav: var(--aws-nav);
+  --color-aws-nav-foreground: var(--aws-nav-foreground);
+  --color-aws-nav-hover: var(--aws-nav-hover);
+  --color-aws-sidebar: var(--aws-sidebar);
+  --color-aws-sidebar-foreground: var(--aws-sidebar-foreground);
+  --color-aws-sidebar-border: var(--aws-sidebar-border);
+  --color-aws-link: var(--aws-link);
+  --color-aws-orange: var(--aws-orange);
+  --color-aws-orange-hover: var(--aws-orange-hover);
+  --color-aws-surface: var(--aws-surface);
+  --color-aws-panel: var(--aws-panel);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Surfaces */
+  --background: oklch(0.985 0.002 247);          /* #fafafa-ish */
+  --foreground: oklch(0.18 0.02 257);            /* #16191f */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 257);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 257);
+
+  /* Primary = AWS action blue (#0972d3) */
+  --primary: oklch(0.55 0.16 248);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.96 0.005 247);
+  --secondary-foreground: oklch(0.18 0.02 257);
+  --muted: oklch(0.96 0.005 247);
+  --muted-foreground: oklch(0.48 0.012 257);
+  --accent: oklch(0.94 0.012 248);
+  --accent-foreground: oklch(0.2 0.04 257);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.006 250);                 /* #e9ebed */
+  --input: oklch(0.9 0.006 250);
+  --ring: oklch(0.55 0.16 248);
+
+  /* AWS tokens */
+  --aws-nav: oklch(0.235 0.02 260);               /* #232f3e squid ink */
+  --aws-nav-foreground: oklch(0.97 0.003 247);
+  --aws-nav-hover: oklch(0.31 0.025 260);
+  --aws-sidebar: oklch(1 0 0);
+  --aws-sidebar-foreground: oklch(0.18 0.02 257);
+  --aws-sidebar-border: oklch(0.9 0.006 250);
+  --aws-link: oklch(0.5 0.17 248);                /* #0972d3 */
+  --aws-orange: oklch(0.7 0.17 50);               /* #ec7211 */
+  --aws-orange-hover: oklch(0.62 0.18 45);        /* #eb5f07 */
+  --aws-surface: oklch(0.985 0.002 247);
+  --aws-panel: oklch(1 0 0);
+}
+
+.dark {
+  --background: oklch(0.16 0.018 260);
+  --foreground: oklch(0.97 0.003 247);
+  --card: oklch(0.21 0.02 260);
+  --card-foreground: oklch(0.97 0.003 247);
+  --popover: oklch(0.21 0.02 260);
+  --popover-foreground: oklch(0.97 0.003 247);
+  --primary: oklch(0.7 0.15 248);
+  --primary-foreground: oklch(0.14 0.02 260);
+  --secondary: oklch(0.26 0.02 260);
+  --secondary-foreground: oklch(0.97 0.003 247);
+  --muted: oklch(0.26 0.02 260);
+  --muted-foreground: oklch(0.72 0.012 257);
+  --accent: oklch(0.3 0.025 260);
+  --accent-foreground: oklch(0.97 0.003 247);
+  --destructive: oklch(0.62 0.19 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.7 0.15 248);
+  --aws-nav: oklch(0.16 0.018 260);
+  --aws-nav-foreground: oklch(0.97 0.003 247);
+  --aws-nav-hover: oklch(0.24 0.02 260);
+  --aws-sidebar: oklch(0.21 0.02 260);
+  --aws-sidebar-foreground: oklch(0.97 0.003 247);
+  --aws-sidebar-border: oklch(1 0 0 / 10%);
+  --aws-link: oklch(0.74 0.14 248);
+  --aws-orange: oklch(0.73 0.17 50);
+  --aws-orange-hover: oklch(0.66 0.18 47);
+  --aws-surface: oklch(0.16 0.018 260);
+  --aws-panel: oklch(0.21 0.02 260);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-aws-surface);
+    color: var(--color-foreground);
+    font-family: "Amazon Ember", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+  }
+}
